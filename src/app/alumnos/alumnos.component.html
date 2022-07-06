@@ -1,0 +1,46 @@
+<div *ngIf="alumnoNuevo">
+  {{sumarAlumno(alumnoNuevo)}}
+</div>
+
+<div [ngStyle]="{'background-color': color}" >
+
+  <div>
+    <h2 class="d-flex justify-content-center align-center">Lista de Alumnos</h2>
+  </div>
+  <div [ngSwitch]="mostrarLista" class="d-flex justify-content-center align-center">
+    <button type="button" class="btn btn-primary" (click)="mostrarLista = 'T'" (click)="color = 'red'">Todos</button>
+    <button type="button" class="btn btn-secondary" (click)="mostrarLista = 'M'" (click)="color = 'yellow'">Hombres</button>
+    <button type="button" class="btn btn-success" (click)="mostrarLista = 'F'" (click)="color = 'green'">Mujeres</button>
+  </div>
+  <br>
+  <div [ngSwitch]="mostrarLista" class="d-flex justify-content-center align-center"  >
+    <div *ngSwitchCase="'T'">
+      <ul>
+        <li *ngFor="let alumno of verLista(mostrarLista)">
+          {{alumno.apellido + ", " + alumno.nombre | uppercase }}
+        </li>
+      </ul>
+    </div>
+    <div *ngSwitchCase="'M'">
+      <ul>
+        <li *ngFor="let alumno of verLista(mostrarLista)">
+          {{alumno.apellido + ", " + alumno.nombre | uppercase }}
+        </li>
+      </ul>
+    </div>
+    <div *ngSwitchCase="'F'">
+      <ul>
+        <li *ngFor="let alumno of verLista(mostrarLista)">
+          {{alumno.apellido + ", " + alumno.nombre | uppercase }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

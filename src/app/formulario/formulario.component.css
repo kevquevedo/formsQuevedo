@@ -1,0 +1,12 @@
+.form-error{
+  border-color: red;
+  border-style:groove;
+}
+
+.form-control,
+.form-floating,
+.titulo{
+  width: 100%;
+}
+
+
